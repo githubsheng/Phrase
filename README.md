@@ -1,12 +1,12 @@
 # Phrase
 
 #Live Demo
-wangshengwow.appspot.com
+http://www.wangshengwow.appspot.com/html/sheng.html
 
 #New Features
-Infinite scroll: by default only 40 phrases are displayed in the page. As user scrolls down, more phrases are dynamically loaded in.
-Enhanced select all: clicking select all will only select all filtered results (results filtered by search key word / status)
-Dependency refactoring: removed all JQuery and Boostrap dependencies. This demo is pure Angular based.
+1. Infinite scroll: by default only 40 phrases are displayed in the page. As user scrolls down, more phrases are dynamically loaded in.
+2. Enhanced select all: clicking select all will only select all filtered results (results filtered by search key word / status)
+3. Dependency refactoring: removed all JQuery and Boostrap dependencies. This demo is pure Angular based.
 
 #Code Format
 Written in TypeScript, compiled to ES6, packed by Webpack.
