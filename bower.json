@@ -1,0 +1,9 @@
+{
+  "name": "wangsheng_code_challenge",
+  "dependencies": {
+    "angular": "^1.5.8",
+    "angular-sanitize": "^1.5.8",
+    "jasmine-core": "jasmine#^2.4.1",
+    "angular-mocks": "^1.5.8"
+  }
+}

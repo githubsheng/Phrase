@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es6",
+    "sourceMap": true
+  },
+  "files": [
+    "js/main.ts",
+    "js/controllers/PhrasesController.ts",
+    "js/filters/StatusFilter.ts",
+    "js/models/FilterStatus.ts",
+    "js/models/Phrase.ts",
+    "js/directive/ToolTipDirective.ts",
+    "js/services/InfiniteScrollService.ts",
+    "js/services/FakeAjaxService.ts"
+  ]
+}
