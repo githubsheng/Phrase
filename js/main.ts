@@ -11,5 +11,5 @@ angular.module('Main', ["ngSanitize"])
     .filter('statusFilter', StatusFilter)
     .directive('wsToolTip', ToolTipDirective)
     .factory('infiniteScrollService', InfiniteScrollServiceFactory)
-    .factory('fakeAjaxToServer', FakeAjaxServiceFactory)
+    .factory('fakeAjaxToServer', ["$q", FakeAjaxServiceFactory])
     .controller("phrasesController", ["$scope", '$filter', 'infiniteScrollService', 'fakeAjaxToServer', PhrasesController]);
