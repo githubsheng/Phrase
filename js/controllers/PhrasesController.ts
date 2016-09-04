@@ -125,10 +125,8 @@ export function PhrasesController($scope: PhrasesControllerScope, $ngFilterServi
     const getNoteFromLocalStorage = (phrase) => phrase.note = window.localStorage.getItem(phrase.id);
     getPhrasesFromFakeServer().then((phrases => {
         phrases.forEach(getNoteFromLocalStorage);
-        $scope.$apply(function(){
-            $scope.phrases = phrases;
-            $scope.numberOfHiddenPhrases = _countHiddenPhrases($scope.phrases);
-        });
+        $scope.phrases = phrases;
+        $scope.numberOfHiddenPhrases = _countHiddenPhrases($scope.phrases);
     }));
 
     /**
