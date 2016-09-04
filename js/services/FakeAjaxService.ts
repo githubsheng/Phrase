@@ -3,12 +3,13 @@
  */
 import {Phrase} from "../models/Phrase";
 import {FilterStatus} from "../models/FilterStatus";
+import IPromise = angular.IPromise;
 
 export interface FakeAjaxService {
-    ():Promise<Phrase[]>
+    ():IPromise<Phrase[]>
 }
 
-export function FakeAjaxServiceFactory(): FakeAjaxService{
+export function FakeAjaxServiceFactory($q: ng.IQService): FakeAjaxService{
 
     function generateRandomPhrases(): Phrase[]{
         let contextWords = ['scala', 'typescript', 'groovy', 'java', 'javascript', 'go-lang', 'python', 'shader lang'];
@@ -29,12 +30,13 @@ export function FakeAjaxServiceFactory(): FakeAjaxService{
         return phrases;
     }
 
-    return function getPhrasesFromHTTPServer():Promise<Phrase[]> {
-        function promiseFunc(resolve) {
-            setTimeout(()=>{
-                resolve(generateRandomPhrases());
-            }, 100);
-        }
-        return new Promise<Phrase[]>(promiseFunc);
+    return function getPhrasesFromHTTPServer():IPromise<Phrase[]> {
+        let deferred = $q.defer<Phrase[]>();
+
+        setTimeout(()=>{
+            deferred.resolve(generateRandomPhrases());
+        }, 100);
+
+        return deferred.promise;
     }
 }
